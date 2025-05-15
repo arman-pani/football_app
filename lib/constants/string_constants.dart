@@ -9,4 +9,8 @@ class StringConstants {
   static const String medalsTableTitle1 = 'Position';
   static const String medalsTableTitle2 = 'Country';
   static const String medalsTableTitle3 = 'Total';
+
+  static const String athletesTableTitle1 = 'Athlete';
+  static const String athletesTableTitle2 = 'Sport';
+  static const String athletesTableTitle3 = 'Medal';
 }

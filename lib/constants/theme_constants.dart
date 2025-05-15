@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ColorConstants {
   static const Color bgColor = Color(0xFFF4F5F7);
   static const Color redBrown = Color(0xFFB6495B);
+  static const Color grey1 = Color(0xFFF9F9FA);
 }
 
 class TextStyleConstants {

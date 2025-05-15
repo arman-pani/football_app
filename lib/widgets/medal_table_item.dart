@@ -23,7 +23,7 @@ class MedalTableItem extends StatelessWidget {
       width: double.infinity,
       height: 50,
       decoration: BoxDecoration(
-        color: ColorConstants.bgColor,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
@@ -51,24 +51,28 @@ class MedalTableItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                    image: AssetImage(medalItem.flagPhotoPath),
+                    image: NetworkImage(medalItem.flagPhotoPath),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               SizedBox(width: 6),
-              Text(
-                medalItem.country,
-                style: TextStyleConstants.tableItemTextStyle,
+              SizedBox(
+                width: 75,
+                child: Text(
+                  medalItem.country,
+                  style: TextStyleConstants.tableItemTextStyle,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
-          Spacer(),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(3, (value) {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 7),
                 child: Text(
                   medalList[value].toString(),
                   style: TextStyleConstants.tableItemTextStyle,

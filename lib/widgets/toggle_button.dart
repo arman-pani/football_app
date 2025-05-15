@@ -4,14 +4,24 @@ import 'package:flutter/material.dart';
 class CustomToggleWidget extends StatefulWidget {
   final List<String> labels;
 
-  const CustomToggleWidget({super.key, required this.labels});
+  final ValueChanged<int>? onToggle;
+
+  const CustomToggleWidget({super.key, required this.labels, this.onToggle});
 
   @override
   State<CustomToggleWidget> createState() => _CustomToggleWidgetState();
 }
 
+class VoidCallBack {}
+
 class _CustomToggleWidgetState extends State<CustomToggleWidget> {
-  int _selectedIndex = 0;
+  late int _selectedIndex;
+
+  @override
+  void initState() {
+    _selectedIndex = 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +38,10 @@ class _CustomToggleWidgetState extends State<CustomToggleWidget> {
           setState(() {
             _selectedIndex = index;
           });
+
+          if (widget.onToggle != null) {
+            widget.onToggle!(index);
+          }
         },
         inactiveOpacity: 1,
         style: ToggleStyle(
@@ -37,7 +51,6 @@ class _CustomToggleWidgetState extends State<CustomToggleWidget> {
           backgroundGradient: LinearGradient(
             colors: [Colors.deepPurple, Colors.deepOrange],
           ),
-
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),

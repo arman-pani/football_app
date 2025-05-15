@@ -11,7 +11,6 @@ class CommonAppbar extends StatelessWidget {
       child: Row(
         children: [
           const Spacer(flex: 1),
-
           Flexible(
             flex: 3,
             child: Container(
@@ -20,7 +19,6 @@ class CommonAppbar extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-
                 color: Colors.white,
                 shape: BoxShape.rectangle,
               ),

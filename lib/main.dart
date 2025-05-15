@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football_app/pages/index.dart';
+import 'package:football_app/utils/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Football App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const IndexPage(),
+      routerConfig: appRouter,
     );
   }
 }
